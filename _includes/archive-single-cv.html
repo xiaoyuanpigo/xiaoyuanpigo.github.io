@@ -1,0 +1,66 @@
+{% include base_path %}
+
+{% if post.header.teaser %}
+{% capture teaser %}{{ post.header.teaser }}{% endcapture %}
+{% else %}
+{% assign teaser = site.teaser %}
+{% endif %}
+
+{% if post.id %}
+{% assign title = post.title | markdownify | remove: "<p>" | remove: "</p>" %}
+{% else %}
+{% assign title = post.title %}
+{% endif %}
+
+<div class="{{ include.type | default: " list" }}__item">
+  <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
+    <li>
+      {% if include.type == "grid" and teaser %}
+      <div class="archive__item-teaser">
+        <img src={% if teaser contains "://" %}"{{ teaser }}"{% else %}"{{ teaser | prepend: "/images/" | prepend:
+          base_path }}"{% endif %} alt="">
+      </div>
+      {% endif %}
+
+      <!-- Paper title -->
+      <h3 class="archive__item-title" itemprop="headline" style="font-style: italic; font-weight: 600;">
+        {% if post.link %}
+        <a href="{{ post.link }}">{{ title }}</a>
+        {% else %}
+        {{ title }}
+        {% endif %}
+      </h3>
+
+      <!-- Authors -->
+      {% if post.authors %}
+      <p class="archive__item-authors" style="margin-top: 5px;margin-bottom: 4px;">{{ post.authors }}</p>
+      {% endif %}
+
+      <!-- Venue or citation -->
+      {% if post.venue %}
+      <p class="archive__item-excerpt" style="font-size: 90%; color: #5a6772;margin-top: 5px">
+        {{ post.venue }}
+      </p>
+      {% elsif post.citation %}
+      <p class="archive__item-excerpt" style="font-size: 90%; color: #5a6772;">
+        {{ post.citation }}
+      </p>
+      {% endif %}
+
+      <!-- PDF / Slides / Code Buttons -->
+      {% if post.paperurl or post.slidesurl or post.githubsurl %}
+      <p class="archive__item-excerpt" style="margin-top: -5px;">
+        {% if post.paperurl %}
+        <a href="{{ post.paperurl }}" class="btn--inverse btn--small" style="margin-right: 15px;">PDF</a>
+        {% endif %}
+        {% if post.slidesurl %}
+        <a href="{{ post.slidesurl }}" class="btn--inverse btn--small" style="margin-right: 15px;">Slides</a>
+        {% endif %}
+        {% if post.githuburl %}
+        <a href="{{ post.githuburl }}" class="btn--inverse btn--small" style="margin-right: 15px;">Code</a>
+        {% endif %}
+      </p>
+      {% endif %}
+    </li>
+  </article>
+</div>

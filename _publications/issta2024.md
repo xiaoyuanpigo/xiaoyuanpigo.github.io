@@ -6,6 +6,7 @@ collection: publications
 permalink: /publication/issta2024
 excerpt: ''
 date: 2024-06-01
+topic: 'Robustness Testing for Neural Network'
 venue: 'The ACM SIGSOFT International Symposium on Software Testing and Analysis'
 location: 'Vienna, Austria'
 githuburl: 'https://github.com/meng2180/CooTest'

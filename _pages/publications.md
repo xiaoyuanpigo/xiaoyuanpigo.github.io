@@ -1,11 +1,12 @@
 ---
 layout: archive
-title: "Publications(*: corresponding author)"
+title: "Publications"
 permalink: /publications/
 author_profile: true
 ---
 
 {% if site.author.googlescholar %}
+<p>*: corresponding author</p>
   <div class="wordwrap">You can also find my articles on <a href="{{site.author.googlescholar}}">my Google Scholar profile</a>.</div>
 {% endif %}
 

@@ -79,6 +79,5 @@ Teaching
   
 Service and leadership
 ======
-* Reviewer: AAAI 2023, NeurIPS (2024, 2025), ICLR 2025, ICML 2025     
-* Sub-Reviewer: TASE 2025
-* External-Reviewer: AAAI 2025
+* Reviewer: AAAI 2023, NeurIPS (2024, 2025), ICLR (2025, 2026), ICML 2025     
+* Sub-Reviewer/External-Reviewer: TASE 2025, AAAI 2025, USENIX 2026

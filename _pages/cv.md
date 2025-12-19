@@ -11,7 +11,7 @@ redirect_from:
 
 Education
 ======
-* Joint Ph.D. in Compute Science, School of Computing, National University of Singapore, Nov. 2024-(expected: April 2026) (Supervised by Professor [Jinsong Dong](https://www.comp.nus.edu.sg/~dongjs/), with academic collaboration and guidance from Professor [Jun Sun](https://sunjun.site//), Singapore Management University)
+* Joint Ph.D. in Compute Science, School of Computing, National University of Singapore, Nov. 2024-Nov. 2025 (Supervised by Professor [Jinsong Dong](https://www.comp.nus.edu.sg/~dongjs/), with academic collaboration and guidance from Professor [Jun Sun](https://sunjun.site//), Singapore Management University)
 * Ph.D. in Software Institute, Nanjing University, 2021-(expected: 2026) (Supervised by Professor [Zhenyu Chen](https://software.nju.edu.cn/zychen/) and Associate Professor [Chunrong Fang](https://chunrong.github.io), with academic collaboration and guidance from Assistant Professor [Shiqing Ma](https://people.cs.umass.edu/~shiqingma/), University of Massachusetts Amherst)
 * B.S. in Mathematics Institute, Sun Yat-sen University, 2017-2021 (Supervised by Professor [Xianping Guo](https://math.sysu.edu.cn/teacher/428))
 
@@ -43,7 +43,7 @@ Research Interest
 * Sub-skill 2.3
  * Skill 3 --> 
 
-Publications()
+Publications
 ======
 <p style="font-size: 0.9em;">
   <sup>†</sup> Co-first authors; <sup>*</sup> Corresponding authors.

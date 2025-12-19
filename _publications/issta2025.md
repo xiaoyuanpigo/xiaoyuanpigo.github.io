@@ -6,7 +6,7 @@ collection: publications
 permalink: /publication/issta2025
 excerpt: ''
 date: 2025-06-01
-topic: 'Watermark for Code Large Model/Datasets'
+topic: 'Watermarking for Code Large Language Models and Datasets'
 venue: 'International Symposium on Software Testing and Analysis'
 location: 'Trondheim, Norway'
 githuburl: 'https://github.com/xiaoyuanpigo/DeCoMa'

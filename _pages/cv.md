@@ -43,8 +43,11 @@ Research Interest
 * Sub-skill 2.3
  * Skill 3 --> 
 
-Publications
+Publications()
 ======
+<p style="font-size: 0.9em;">
+  <sup>†</sup> Co-first authors; <sup>*</sup> Corresponding authors.
+</p>
 <ul>
   {% assign sorted = site.publications | sort: "date" | reverse | sort: "weight" %}
   {% for post in sorted %}
@@ -66,16 +69,18 @@ Projects
 
 Awards
 ======
-* Nanjing University Graduate Scholarship, (2021-2025) 
-* Outstanding Graduate Student, 2022
-* Second  Prize of Sun Yat-sen University Undergraduate Scholarship, 2021
-* Third Prizes of Sun Yat-sen University Undergraduate Scholarship, (2017-2020)
-* The National Second Prize of the National Mathematical Modeling Competition, 2019
+* Huawei Scholarship, School Level, 2025
+* Model Graduate Student, School Level, 2025 
+* Nanjing University Graduate Scholarship, School Level, (2021-2025) 
+* Outstanding Graduate Student, School Level, 2022
+* Second  Prize of Sun Yat-sen University Undergraduate Scholarship, School Level, 2021
+* Third Prizes of Sun Yat-sen University Undergraduate Scholarship, School Level, (2017-2020)
+* The National Second Prize of the National Mathematical Modeling Competition, National Level, 2019
 
   
 Teaching
 ======
-* Teaching Assitant: Foudation of Data Science (2022-2025) 
+* Teaching Assitant: Foudation of Data Science (2022-2024) 
   
 Service and leadership
 ======

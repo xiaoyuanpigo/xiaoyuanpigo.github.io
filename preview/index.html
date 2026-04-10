@@ -1,0 +1,603 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Yuan Xiao | Preview</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #f6f8fc;
+      --surface: rgba(255, 255, 255, 0.84);
+      --border: rgba(15, 23, 42, 0.08);
+      --text: #0f172a;
+      --muted: #536277;
+      --accent: #1769ff;
+      --accent-soft: rgba(23, 105, 255, 0.12);
+      --accent-2: #0ea5a4;
+      --shadow: 0 24px 70px rgba(15, 23, 42, 0.09);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--text);
+      font-family: "Source Serif 4", Georgia, serif;
+      background:
+        linear-gradient(rgba(248, 251, 255, 0.72), rgba(238, 243, 251, 0.78)),
+        url("../images/custom/campus-bg.jpg") center top / cover fixed no-repeat,
+        radial-gradient(circle at top left, rgba(23, 105, 255, 0.12), transparent 28rem),
+        radial-gradient(circle at top right, rgba(14, 165, 164, 0.14), transparent 26rem),
+        linear-gradient(180deg, #f8fbff 0%, #eef3fb 52%, #f9fbfe 100%);
+    }
+    a { color: inherit; }
+    .shell { max-width: 1200px; margin: 0 auto; padding: 0 20px 64px; }
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      backdrop-filter: blur(18px);
+      background: rgba(246, 248, 252, 0.76);
+      border-bottom: 1px solid rgba(15, 23, 42, 0.06);
+    }
+    .topbar-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 14px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+    }
+    .brand, .nav a, .eyebrow, .pill, .button, .rank {
+      font-family: "Space Grotesk", "Avenir Next", sans-serif;
+    }
+    .brand {
+      text-decoration: none;
+      font-weight: 700;
+      letter-spacing: -0.03em;
+    }
+    .nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+    .nav a {
+      text-decoration: none;
+      color: var(--muted);
+      font-size: 0.92rem;
+      font-weight: 500;
+    }
+    section { scroll-margin-top: 84px; }
+    .hero { padding: 28px 0 20px; }
+    .grid-hero {
+      display: grid;
+      gap: 24px;
+      grid-template-columns: minmax(0, 1.35fr) minmax(320px, 0.85fr);
+      align-items: stretch;
+    }
+    .card {
+      backdrop-filter: blur(18px);
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      box-shadow: var(--shadow);
+    }
+    .hero-copy {
+      position: relative;
+      overflow: hidden;
+      padding: 32px;
+    }
+    .hero-copy::before {
+      content: "";
+      position: absolute;
+      right: -48px;
+      top: -64px;
+      width: 224px;
+      height: 224px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, rgba(23, 105, 255, 0.14), rgba(14, 165, 164, 0.1));
+      filter: blur(12px);
+    }
+    .eyebrow {
+      display: inline-block;
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 16px;
+      position: relative;
+      z-index: 1;
+    }
+    h1, h2, h3 {
+      font-family: "Space Grotesk", "Avenir Next", sans-serif;
+      margin: 0;
+      letter-spacing: -0.04em;
+    }
+    h1 {
+      font-size: clamp(2.5rem, 5.8vw, 5rem);
+      line-height: 0.95;
+      position: relative;
+      z-index: 1;
+      max-width: 10ch;
+    }
+    h1 span { color: var(--accent); display: block; }
+    .lead {
+      position: relative;
+      z-index: 1;
+      max-width: 64ch;
+      margin: 22px 0 24px;
+      color: var(--muted);
+      font-size: 1.06rem;
+      line-height: 1.85;
+    }
+    .pills, .actions, .meta, .links, .two-col, .stats, .cards {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .pill, .rank, .link {
+      display: inline-flex;
+      align-items: center;
+      padding: 10px 14px;
+      border-radius: 999px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      text-decoration: none;
+    }
+    .pill {
+      background: rgba(255, 255, 255, 0.72);
+      border: 1px solid rgba(15, 23, 42, 0.08);
+    }
+    .button, .link {
+      display: inline-flex;
+      align-items: center;
+      text-decoration: none;
+      border-radius: 999px;
+      padding: 14px 18px;
+      border: 1px solid rgba(15, 23, 42, 0.08);
+      font-size: 0.92rem;
+      font-weight: 700;
+      transition: transform .18s ease, box-shadow .18s ease;
+    }
+    .button:hover, .link:hover { transform: translateY(-1px); box-shadow: 0 12px 28px rgba(15, 23, 42, 0.08); }
+    .button.primary { background: linear-gradient(135deg, var(--accent), #3b82f6); color: #fff; }
+    .button.secondary, .link { background: rgba(255, 255, 255, 0.72); color: var(--text); }
+    .side { padding: 22px; display: flex; flex-direction: column; gap: 16px; }
+    .portrait {
+      background: linear-gradient(160deg, rgba(23, 105, 255, 0.18), rgba(14, 165, 164, 0.12));
+      border-radius: 22px;
+      padding: 14px;
+    }
+    .portrait img {
+      width: 100%;
+      display: block;
+      border-radius: 18px;
+      object-fit: cover;
+    }
+    .note, .muted, .pub-authors, .pub-venue, .mini-meta {
+      color: var(--muted);
+      line-height: 1.75;
+    }
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+    }
+    .stat {
+      padding: 16px;
+      border-radius: 20px;
+      background: rgba(255, 255, 255, 0.72);
+      border: 1px solid rgba(15, 23, 42, 0.08);
+    }
+    .stat strong {
+      display: block;
+      font-family: "Space Grotesk", "Avenir Next", sans-serif;
+      font-size: 1.35rem;
+      margin-bottom: 4px;
+    }
+    .section-head {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin: 28px 0 18px;
+    }
+    .section-head .tag {
+      background: var(--accent-soft);
+      color: var(--accent);
+      border: 1px solid rgba(23, 105, 255, 0.14);
+      border-radius: 999px;
+      padding: 6px 12px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-family: "Space Grotesk", "Avenir Next", sans-serif;
+    }
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+    }
+    .mini-card, .pub-card { padding: 22px; }
+    .mini-card h3, .pub-card h3 { font-size: 1.08rem; margin-bottom: 10px; }
+    .two-col {
+      display: grid;
+      grid-template-columns: minmax(0, 1.45fr) minmax(280px, 0.75fr);
+      gap: 16px;
+    }
+    .pub-group { margin-top: 28px; }
+    .pub-list, .mini-list { display: grid; gap: 16px; }
+    .rank {
+      background: linear-gradient(135deg, rgba(23, 105, 255, 0.12), rgba(14, 165, 164, 0.12));
+      border: 1px solid rgba(23, 105, 255, 0.1);
+      color: #1048b5;
+    }
+    .fineprint {
+      color: var(--muted);
+      font-size: 0.9rem;
+      line-height: 1.7;
+    }
+    .mini-item + .mini-item {
+      margin-top: 14px;
+      padding-top: 14px;
+      border-top: 1px solid rgba(15, 23, 42, 0.08);
+    }
+    .mini-title {
+      display: block;
+      font-weight: 700;
+      text-decoration: none;
+      margin-bottom: 4px;
+    }
+    .contact {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+    @media (max-width: 1024px) {
+      .grid-hero, .two-col, .cards { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 720px) {
+      .shell { padding: 0 16px 48px; }
+      .topbar-inner { padding: 12px 16px; align-items: flex-start; flex-direction: column; }
+      .hero-copy, .side, .mini-card, .pub-card { padding: 18px; }
+      .stats { grid-template-columns: 1fr; }
+      .contact { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a class="brand" href="#about">Yuan Xiao</a>
+      <nav class="nav">
+        <a href="#about">About</a>
+        <a href="#research">Research</a>
+        <a href="#publications">Publications</a>
+        <a href="#talks">Talks</a>
+        <a href="#teaching">Teaching</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="shell">
+    <section class="hero" id="about">
+      <div class="grid-hero">
+        <div class="card hero-copy">
+          <div class="eyebrow">Trustworthy AI · Verification · Security</div>
+          <h1>Yuan <span>Xiao</span></h1>
+          <p class="lead">I am currently a Ph.D. student at the Software Institute, Nanjing University, under the supervision of Professor Zhenyu Chen and Associate Professor Chunrong Fang, with academic collaboration and guidance from Assistant Professor Shiqing Ma at the University of Massachusetts Amherst. I was also a joint Ph.D. student at the School of Computing, National University of Singapore, from November 2024 to November 2025, under the supervision of Professor Jinsong Dong, with collaboration and guidance from Professor Jun Sun. I received my bachelor's degree in Mathematics from Sun Yat-sen University in 2021, advised by Professor Xianping Guo.</p>
+          <div class="pills">
+            <span class="pill">Nanjing University</span>
+            <span class="pill">Software Security</span>
+            <span class="pill">Neural Verification</span>
+            <span class="pill">Postdoc 2026</span>
+          </div>
+          <div class="actions" style="margin-top:18px">
+            <a class="button primary" href="#publications">View Publications</a>
+        <a class="button secondary" href="../files/resume.pdf">Open CV</a>
+            <a class="button secondary" href="mailto:yuan.xiao@smail.nju.edu.cn">Email Me</a>
+          </div>
+        </div>
+        <aside class="card side">
+          <div class="portrait">
+            <img src="../images/custom/portrait-yuan.jpg" alt="Portrait of Yuan Xiao">
+          </div>
+          <p class="note">My research focuses on building robust and trustworthy AI systems, especially neural network verification, code dataset watermarking, backdoor defense, and security analysis for modern learning systems. I am actively looking for postdoctoral opportunities in trustworthy AI and security.</p>
+          <div class="stats">
+            <div class="stat"><strong>8</strong><span class="muted">publications listed</span></div>
+            <div class="stat"><strong>1</strong><span class="muted">talk or poster</span></div>
+            <div class="stat"><strong>2026</strong><span class="muted">expected Ph.D. completion</span></div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section id="research">
+      <div class="section-head">
+        <span class="tag">Research</span>
+        <h2>Current focus</h2>
+      </div>
+      <div class="cards">
+        <article class="card mini-card">
+          <h3>Neural Network Verification</h3>
+          <p class="muted">Certified robustness for deep neural networks, especially MaxPool-based architectures and tighter linear approximation methods.</p>
+        </article>
+        <article class="card mini-card">
+          <h3>Code Dataset Watermarking</h3>
+          <p class="muted">Embedding, detecting, removing, and stress-testing watermarks in code datasets and neural code models.</p>
+        </article>
+        <article class="card mini-card">
+          <h3>AI Security</h3>
+          <p class="muted">Backdoors, unauthorized model usage, and trustworthy deployment problems around modern learning systems.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="education">
+      <div class="section-head">
+        <span class="tag">Education</span>
+        <h2>Academic background</h2>
+      </div>
+      <div class="cards" style="margin-top:16px">
+        <article class="card mini-card">
+          <h3>2021 - 2026</h3>
+          <p class="muted">Ph.D., Software Institute, Nanjing University.</p>
+        </article>
+        <article class="card mini-card">
+          <h3>Nov 2024 - Nov 2025</h3>
+          <p class="muted">Joint Ph.D., School of Computing, National University of Singapore.</p>
+        </article>
+        <article class="card mini-card">
+          <h3>2017 - 2021</h3>
+          <p class="muted">B.S. in Mathematics, Sun Yat-sen University.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="publications">
+      <div class="section-head">
+        <span class="tag">Publications</span>
+        <h2>Selected papers across verification, watermarking, and security</h2>
+      </div>
+      <p class="fineprint"><sup>†</sup> co-first authors. <sup>*</sup> corresponding authors. For <em>Findings of ACL</em>, the CCF list does not count it as a regular ranked conference, so it is marked as <code>N/A</code>.</p>
+
+      <div class="pub-group">
+        <h3>Watermarking for Code Large Language Models and Datasets</h3>
+        <div class="pub-list" style="margin-top:16px">
+          <article class="card pub-card">
+            <h3>Train in Vain: Functionality-Preserving Poisoning to Prevent Unauthorized Use of Code Datasets</h3>
+            <p class="pub-authors"><strong>Yuan Xiao</strong>†, Yuchen Chen†, Jiaming Wang, Wei Song, Jun Sun, Shiqing Ma, Yanzhou Mu, Juan Zhai, Chunrong Fang*, Jin Song Dong, Zhenyu Chen*</p>
+            <p class="pub-venue">Findings of the Association for Computational Linguistics, 2026</p>
+            <div class="meta">
+              <span class="rank">CCF N/A</span>
+              <span class="rank">CORE N/A</span>
+            </div>
+          </article>
+          <article class="card pub-card">
+            <h3>DuCodeMark: Dual-Purpose Code Dataset Watermarking via Style-Aware Watermark-Poison Design</h3>
+            <p class="pub-authors">Yuchen Chen†, <strong>Yuan Xiao</strong>†, Chunrong Fang*, Zhenyu Chen*, Baowen Xu*</p>
+            <p class="pub-venue">ESEC/FSE, 2026</p>
+            <div class="meta">
+              <span class="rank">CCF A</span>
+              <span class="rank">CORE A*</span>
+            </div>
+          </article>
+          <article class="card pub-card">
+            <h3>PuzzleMark: Implicit Jigsaw Learning for Robust Code Dataset Watermarking in Neural Code Completion Models</h3>
+            <p class="pub-authors">Haocheng Huang, Yuchen Chen, Weisong Sun, Peizhuo Lv, <strong>Yuan Xiao</strong>, Chunrong Fang, Yang Liu, Xiaofang Zhang*</p>
+            <p class="pub-venue">ESEC/FSE, 2026</p>
+            <div class="meta">
+              <span class="rank">CCF A</span>
+              <span class="rank">CORE A*</span>
+            </div>
+          </article>
+          <article class="card pub-card">
+            <h3>DeCoMa: Detecting and Purifying Code Dataset Watermarks through Dual Channel Code Abstraction</h3>
+            <p class="pub-authors"><strong>Yuan Xiao</strong>, Yuchen Chen, Shiqing Ma, Haocheng Huang, Chunrong Fang*, Yanwei Chen, Weisong Sun, Yunfeng Zhu, Xiaofang Zhang, Zhenyu Chen*</p>
+            <p class="pub-venue">ISSTA, 2025 · Trondheim, Norway</p>
+            <div class="meta">
+              <span class="rank">CCF A</span>
+              <span class="rank">CORE A</span>
+            </div>
+            <div class="links" style="margin-top:14px">
+              <a class="link" href="../files/issta2025.pdf">Paper</a>
+              <a class="link" href="https://github.com/xiaoyuanpigo/DeCoMa">Code</a>
+            </div>
+          </article>
+        </div>
+      </div>
+
+      <div class="pub-group">
+        <h3>Robustness Verification for Neural Network</h3>
+        <div class="pub-list" style="margin-top:16px">
+          <article class="card pub-card">
+            <h3>Tightening Robustness Verification of MaxPool-based Neural Networks via Minimizing the Over-Approximation Zone</h3>
+            <p class="pub-authors"><strong>Yuan Xiao</strong>, Yuchen Chen, Shiqing Ma, Chunrong Fang*, Tongtong Bai, Mingzheng Gu, Yuxin Cheng, Yanwei Chen, Zhenyu Chen*</p>
+            <p class="pub-venue">CVPR, 2025 · Tennessee, US</p>
+            <div class="meta">
+              <span class="rank">CCF A</span>
+              <span class="rank">CORE A*</span>
+            </div>
+            <div class="links" style="margin-top:14px">
+              <a class="link" href="../files/cvpr2025.pdf">Paper</a>
+              <a class="link" href="https://github.com/xiaoyuanpigo/Ti-Lin-Hybrid-Lin">Code</a>
+            </div>
+          </article>
+          <article class="card pub-card">
+            <h3>Towards General Robustness Verification of MaxPool-based Convolutional Neural Networks via Tightening Linear Approximation</h3>
+            <p class="pub-authors"><strong>Yuan Xiao</strong>, Shiqing Ma, Juan Zhai, Chunrong Fang*, Jinyuan Jia, Zhenyu Chen*</p>
+            <p class="pub-venue">CVPR, 2024 · Seattle, US</p>
+            <div class="meta">
+              <span class="rank">CCF A</span>
+              <span class="rank">CORE A*</span>
+            </div>
+            <div class="links" style="margin-top:14px">
+              <a class="link" href="../files/cvpr2024.pdf">Paper</a>
+              <a class="link" href="../files/cvpr2024.pptx">Slides</a>
+              <a class="link" href="https://github.com/xiaoyuanpigo/maxlin">Code</a>
+            </div>
+          </article>
+        </div>
+      </div>
+
+      <div class="pub-group">
+        <h3>Backdoor Research for Neural Network</h3>
+        <div class="pub-list" style="margin-top:16px">
+          <article class="card pub-card">
+            <h3>Eliminating Backdoors in Neural Code Models for Secure Code Understanding</h3>
+            <p class="pub-authors">Weisong Sun, Yuchen Chen, Chunrong Fang*, Yebo Feng, <strong>Yuan Xiao</strong>, An Guo, Quanjun Zhang, Zhenyu Chen*, Baowen Xu, Yang Liu</p>
+            <p class="pub-venue">FSE, 2025 · Norway</p>
+            <div class="meta">
+              <span class="rank">CCF A</span>
+              <span class="rank">CORE A*</span>
+            </div>
+            <div class="links" style="margin-top:14px">
+              <a class="link" href="../files/fse2025.pdf">Paper</a>
+              <a class="link" href="https://github.com/wssun/EliBadCode">Code</a>
+            </div>
+          </article>
+        </div>
+      </div>
+
+      <div class="pub-group">
+        <h3>Robustness Testing for Neural Network</h3>
+        <div class="pub-list" style="margin-top:16px">
+          <article class="card pub-card">
+            <h3>CooTest: An Automated Testing Approach for V2X Communication Systems</h3>
+            <p class="pub-authors">An Guo, Xinyu Gao, Zhenyu Chen*, <strong>Yuan Xiao</strong>, Jiakai Liu, Xiuting Ge, Weisong Sun, Chunrong Fang*</p>
+            <p class="pub-venue">ISSTA, 2024 · Vienna, Austria</p>
+            <div class="meta">
+              <span class="rank">CCF A</span>
+              <span class="rank">CORE A</span>
+            </div>
+            <div class="links" style="margin-top:14px">
+              <a class="link" href="../files/issta2024.pdf">Paper</a>
+              <a class="link" href="https://github.com/meng2180/CooTest">Code</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="talks">
+      <div class="section-head">
+        <span class="tag">Talks</span>
+        <h2>Recent presentations</h2>
+      </div>
+      <div class="two-col">
+        <div class="card mini-card">
+          <h3>Talks and posters</h3>
+        <div class="mini-list">
+          <div class="mini-item">
+            <span class="mini-title">DeCoMa: Detecting and Purifying Code Dataset Watermarks through Dual Channel Code Abstraction</span>
+            <div class="mini-meta">Oral Presentation · ISSTA 2025 · June 2025 · Trondheim, Norway</div>
+          </div>
+          <div class="mini-item">
+            <span class="mini-title">Towards General Robustness Verification of MaxPool-based Convolutional Neural Networks via Tightening Linear Approximation</span>
+            <div class="mini-meta">Poster · Seattle Convention Center · June 2024 · Seattle, US</div>
+          </div>
+        </div>
+        </div>
+        <div class="card mini-card">
+          <h3>Highlights</h3>
+          <p class="muted">Poster presentation at CVPR, plus an active publication pipeline across top AI and software engineering venues.</p>
+          <div class="mini-list">
+          <div class="mini-item">
+            <span class="mini-title">Service</span>
+            <div class="mini-meta">Reviewer: AAAI 2023, NeurIPS 2024/2025/2026, ICLR 2025/2026, ICML 2025, TSE 2026.</div>
+          </div>
+            <div class="mini-item">
+              <span class="mini-title">External Review</span>
+              <div class="mini-meta">TASE 2025, AAAI 2025, USENIX 2026, CVPR 2026.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="gallery">
+      <div class="section-head">
+        <span class="tag">Gallery</span>
+        <h2>Snapshots from research and presentation</h2>
+      </div>
+      <div class="cards">
+        <article class="card mini-card">
+          <div style="overflow:hidden;border-radius:18px;margin-bottom:14px">
+            <img src="../images/custom/issta2025-2.jpg" alt="ISSTA 2025 photo" style="display:block;width:100%;height:220px;object-fit:cover">
+          </div>
+          <h3>ISSTA 2025 Oral Presentation</h3>
+          <p class="muted">A snapshot from my oral presentation at ISSTA 2025, highlighting active engagement with the software engineering research community.</p>
+        </article>
+        <article class="card mini-card">
+          <div style="overflow:hidden;border-radius:18px;margin-bottom:14px">
+            <img src="../images/custom/issta2025.jpg" alt="ISSTA 2025 group scene" style="display:block;width:100%;height:220px;object-fit:cover">
+          </div>
+          <h3>ISSTA 2025 Attendance</h3>
+          <p class="muted">A photo from my trip to ISSTA 2025.</p>
+        </article>
+        <article class="card mini-card">
+          <div style="overflow:hidden;border-radius:18px;margin-bottom:14px">
+            <img src="../images/cvpr24-1.jpg" alt="CVPR poster snapshot" style="display:block;width:100%;height:220px;object-fit:cover">
+          </div>
+          <h3>CVPR 2024 Poster</h3>
+          <p class="muted">A poster presentation snapshot from CVPR 2024, representing my work on robustness verification for neural networks.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="teaching">
+      <div class="section-head">
+        <span class="tag">Teaching</span>
+        <h2>Teaching and academic activity</h2>
+      </div>
+      <div class="two-col">
+        <div class="card mini-card">
+          <h3>Teaching</h3>
+          <div class="mini-list">
+            <div class="mini-item">
+              <span class="mini-title">Foundation of Data Science</span>
+              <div class="mini-meta">Teaching Assistant, Undergraduate course · Nanjing University, Software Institute · Nanjing, Jiangsu</div>
+            </div>
+          </div>
+        </div>
+        <div class="card mini-card">
+          <h3>Awards and projects</h3>
+          <div class="mini-list">
+            <div class="mini-item">
+              <span class="mini-title">Awards</span>
+              <div class="mini-meta">Huawei Scholarship (2025), Model Graduate Student (2025), Nanjing University Graduate Scholarship (2021-2025), Outstanding Graduate Student (2022).</div>
+            </div>
+            <div class="mini-item">
+              <span class="mini-title">Projects</span>
+              <div class="mini-meta">Safety-critical software quality assurance, Internet of Vehicles load analysis, and population measurement projects.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" style="margin-top:28px">
+      <div class="card mini-card contact">
+        <div>
+          <div class="section-head" style="margin:0 0 8px">
+            <span class="tag">Contact</span>
+            <h2>Open to postdoc and collaboration opportunities</h2>
+          </div>
+          <p class="muted" style="margin:0">If you are working on trustworthy AI, neural verification, or security for learning systems, feel free to reach out by email or check my Google Scholar profile.</p>
+        </div>
+        <div class="actions">
+          <a class="button primary" href="mailto:yuan.xiao@smail.nju.edu.cn">yuan.xiao@smail.nju.edu.cn</a>
+          <a class="button secondary" href="https://scholar.google.com/citations?user=_k-F1H8AAAJ">Google Scholar</a>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

@@ -1,0 +1,472 @@
+.ai-homepage {
+  --home-bg: #f6f8fc;
+  --home-surface: rgba(255, 255, 255, 0.82);
+  --home-surface-strong: #ffffff;
+  --home-border: rgba(15, 23, 42, 0.08);
+  --home-text: #0f172a;
+  --home-muted: #506077;
+  --home-accent: #1769ff;
+  --home-accent-soft: rgba(23, 105, 255, 0.12);
+  --home-accent-2: #0ea5a4;
+  --home-shadow: 0 22px 60px rgba(15, 23, 42, 0.08);
+  background:
+    linear-gradient(rgba(248, 251, 255, 0.72), rgba(238, 243, 251, 0.78)),
+    url("/images/custom/campus-bg.jpg") center top / cover fixed no-repeat,
+    radial-gradient(circle at top left, rgba(23, 105, 255, 0.12), transparent 28rem),
+    radial-gradient(circle at top right, rgba(14, 165, 164, 0.14), transparent 26rem),
+    linear-gradient(180deg, #f8fbff 0%, #eef3fb 52%, #f9fbfe 100%);
+  color: var(--home-text);
+  font-family: "Source Serif 4", Georgia, serif;
+  margin-top: -1.5em;
+  padding-bottom: 5rem;
+}
+
+.ai-homepage,
+.ai-homepage * {
+  box-sizing: border-box;
+}
+
+.ai-homepage .home-shell {
+  margin: 0 auto;
+  max-width: 1200px;
+  padding: 0 1.5rem;
+}
+
+.ai-homepage .home-section {
+  margin-top: 1.5rem;
+  padding: 1.5rem 0;
+  scroll-margin-top: 5.5rem;
+}
+
+.ai-homepage .home-section-title {
+  align-items: center;
+  display: flex;
+  gap: 0.85rem;
+  margin-bottom: 1rem;
+}
+
+.ai-homepage .home-section-title .eyebrow {
+  background: var(--home-accent-soft);
+  border: 1px solid rgba(23, 105, 255, 0.14);
+  border-radius: 999px;
+  color: var(--home-accent);
+  font-family: "Space Grotesk", "Avenir Next", sans-serif;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  padding: 0.3rem 0.7rem;
+  text-transform: uppercase;
+}
+
+.ai-homepage .home-section-title h2 {
+  font-family: "Space Grotesk", "Avenir Next", sans-serif;
+  font-size: clamp(1.6rem, 2.8vw, 2.5rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  margin: 0;
+}
+
+.ai-homepage .hero {
+  padding: 2rem 0 1rem;
+}
+
+.ai-homepage .hero-grid {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: minmax(0, 1.35fr) minmax(300px, 0.85fr);
+  align-items: stretch;
+}
+
+.ai-homepage .hero-copy,
+.ai-homepage .hero-panel,
+.ai-homepage .feature-card,
+.ai-homepage .publication-card,
+.ai-homepage .mini-card,
+.ai-homepage .timeline-card,
+.ai-homepage .info-chip {
+  backdrop-filter: blur(18px);
+  background: var(--home-surface);
+  border: 1px solid var(--home-border);
+  border-radius: 24px;
+  box-shadow: var(--home-shadow);
+}
+
+.ai-homepage .hero-copy {
+  overflow: hidden;
+  padding: 2rem;
+  position: relative;
+}
+
+.ai-homepage .hero-copy::before {
+  background: linear-gradient(135deg, rgba(23, 105, 255, 0.14), rgba(14, 165, 164, 0.1));
+  border-radius: 999px;
+  content: "";
+  filter: blur(10px);
+  height: 14rem;
+  position: absolute;
+  right: -3rem;
+  top: -4rem;
+  width: 14rem;
+}
+
+.ai-homepage .hero-kicker {
+  color: var(--home-accent);
+  display: inline-block;
+  font-family: "Space Grotesk", "Avenir Next", sans-serif;
+  font-size: 0.84rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  margin-bottom: 1rem;
+  position: relative;
+  text-transform: uppercase;
+  z-index: 1;
+}
+
+.ai-homepage .hero-title {
+  font-family: "Space Grotesk", "Avenir Next", sans-serif;
+  font-size: clamp(2.4rem, 5.4vw, 4.9rem);
+  font-weight: 700;
+  letter-spacing: -0.05em;
+  line-height: 0.95;
+  margin: 0;
+  max-width: 10ch;
+  position: relative;
+  z-index: 1;
+}
+
+.ai-homepage .hero-title span {
+  color: var(--home-accent);
+  display: block;
+}
+
+.ai-homepage .hero-subtitle {
+  color: var(--home-muted);
+  font-size: 1.04rem;
+  line-height: 1.8;
+  margin: 1.4rem 0 1.6rem;
+  max-width: 64ch;
+  position: relative;
+  z-index: 1;
+}
+
+.ai-homepage .hero-tags,
+.ai-homepage .hero-actions,
+.ai-homepage .stat-grid,
+.ai-homepage .feature-grid,
+.ai-homepage .timeline-grid,
+.ai-homepage .publication-links,
+.ai-homepage .publication-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.ai-homepage .hero-tag,
+.ai-homepage .meta-badge,
+.ai-homepage .rank-badge,
+.ai-homepage .link-pill {
+  border-radius: 999px;
+  display: inline-flex;
+  font-family: "Space Grotesk", "Avenir Next", sans-serif;
+  font-size: 0.78rem;
+  font-weight: 700;
+  gap: 0.4rem;
+  line-height: 1;
+  padding: 0.62rem 0.9rem;
+  text-transform: uppercase;
+}
+
+.ai-homepage .hero-tag,
+.ai-homepage .meta-badge {
+  background: rgba(255, 255, 255, 0.72);
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  color: var(--home-text);
+}
+
+.ai-homepage .hero-actions {
+  margin-top: 1.4rem;
+}
+
+.ai-homepage .hero-button,
+.ai-homepage .link-pill {
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  text-decoration: none;
+  transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+}
+
+.ai-homepage .hero-button {
+  align-items: center;
+  border-radius: 999px;
+  display: inline-flex;
+  font-family: "Space Grotesk", "Avenir Next", sans-serif;
+  font-size: 0.9rem;
+  font-weight: 700;
+  gap: 0.6rem;
+  padding: 0.9rem 1.2rem;
+}
+
+.ai-homepage .hero-button:hover,
+.ai-homepage .link-pill:hover {
+  box-shadow: 0 10px 25px rgba(15, 23, 42, 0.08);
+  transform: translateY(-1px);
+}
+
+.ai-homepage .hero-button.primary {
+  background: linear-gradient(135deg, var(--home-accent), #3b82f6);
+  color: #fff;
+}
+
+.ai-homepage .hero-button.secondary,
+.ai-homepage .link-pill {
+  background: rgba(255, 255, 255, 0.7);
+  color: var(--home-text);
+}
+
+.ai-homepage .hero-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1.4rem;
+}
+
+.ai-homepage .portrait-wrap {
+  background: linear-gradient(160deg, rgba(23, 105, 255, 0.18), rgba(14, 165, 164, 0.12));
+  border-radius: 22px;
+  overflow: hidden;
+  padding: 1rem;
+}
+
+.ai-homepage .portrait-wrap img {
+  border-radius: 18px;
+  display: block;
+  height: 100%;
+  object-fit: cover;
+  width: 100%;
+}
+
+.ai-homepage .panel-note {
+  color: var(--home-muted);
+  font-size: 0.95rem;
+  line-height: 1.7;
+  margin: 0;
+}
+
+.ai-homepage .stat-grid {
+  display: grid;
+  gap: 0.9rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.ai-homepage .info-chip {
+  padding: 1rem;
+}
+
+.ai-homepage .info-chip strong {
+  display: block;
+  font-family: "Space Grotesk", "Avenir Next", sans-serif;
+  font-size: 1.3rem;
+  margin-bottom: 0.25rem;
+}
+
+.ai-homepage .info-chip span {
+  color: var(--home-muted);
+  display: block;
+  font-size: 0.88rem;
+  line-height: 1.5;
+}
+
+.ai-homepage .feature-grid,
+.ai-homepage .timeline-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.ai-homepage .feature-card,
+.ai-homepage .timeline-card {
+  padding: 1.3rem;
+}
+
+.ai-homepage .home-media {
+  border-radius: 18px;
+  margin-bottom: 1rem;
+  overflow: hidden;
+}
+
+.ai-homepage .home-media img {
+  display: block;
+  height: 220px;
+  object-fit: cover;
+  width: 100%;
+}
+
+.ai-homepage .feature-card h3,
+.ai-homepage .timeline-card h3,
+.ai-homepage .publication-card h3,
+.ai-homepage .mini-card h3 {
+  font-family: "Space Grotesk", "Avenir Next", sans-serif;
+  font-size: 1.05rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin: 0 0 0.65rem;
+}
+
+.ai-homepage .feature-card p,
+.ai-homepage .timeline-card p,
+.ai-homepage .mini-card p {
+  color: var(--home-muted);
+  margin: 0;
+}
+
+.ai-homepage .timeline-card .timeline-date {
+  color: var(--home-accent);
+  display: inline-block;
+  font-family: "Space Grotesk", "Avenir Next", sans-serif;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  margin-bottom: 0.7rem;
+  text-transform: uppercase;
+}
+
+.ai-homepage .stack-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: minmax(0, 1.45fr) minmax(280px, 0.75fr);
+}
+
+.ai-homepage .publication-group {
+  margin-top: 2rem;
+}
+
+.ai-homepage .publication-group:first-of-type {
+  margin-top: 1rem;
+}
+
+.ai-homepage .publication-group h3 {
+  font-family: "Space Grotesk", "Avenir Next", sans-serif;
+  font-size: 1.2rem;
+  letter-spacing: -0.03em;
+  margin-bottom: 1rem;
+}
+
+.ai-homepage .publication-list,
+.ai-homepage .mini-list {
+  display: grid;
+  gap: 1rem;
+}
+
+.ai-homepage .publication-card {
+  padding: 1.35rem;
+}
+
+.ai-homepage .publication-card p {
+  margin: 0.6rem 0 0;
+}
+
+.ai-homepage .publication-authors,
+.ai-homepage .publication-venue,
+.ai-homepage .publication-note,
+.ai-homepage .mini-meta {
+  color: var(--home-muted);
+  font-size: 0.96rem;
+  line-height: 1.7;
+}
+
+.ai-homepage .publication-meta {
+  margin-top: 0.8rem;
+}
+
+.ai-homepage .rank-badge {
+  background: linear-gradient(135deg, rgba(23, 105, 255, 0.12), rgba(14, 165, 164, 0.12));
+  border: 1px solid rgba(23, 105, 255, 0.1);
+  color: #1048b5;
+}
+
+.ai-homepage .publication-links {
+  margin-top: 1rem;
+}
+
+.ai-homepage .mini-card {
+  padding: 1.2rem;
+}
+
+.ai-homepage .mini-list {
+  margin-top: 1rem;
+}
+
+.ai-homepage .mini-item + .mini-item {
+  border-top: 1px solid rgba(15, 23, 42, 0.08);
+  margin-top: 0.9rem;
+  padding-top: 0.9rem;
+}
+
+.ai-homepage .mini-item-title {
+  color: var(--home-text);
+  display: block;
+  font-weight: 700;
+  margin-bottom: 0.35rem;
+  text-decoration: none;
+}
+
+.ai-homepage .contact-panel {
+  align-items: center;
+  display: flex;
+  gap: 1rem;
+  justify-content: space-between;
+}
+
+.ai-homepage .contact-panel p {
+  color: var(--home-muted);
+  margin: 0;
+  max-width: 44rem;
+}
+
+.ai-homepage .fineprint {
+  color: var(--home-muted);
+  font-size: 0.88rem;
+  margin-top: 1rem;
+}
+
+@media (max-width: 1024px) {
+  .ai-homepage .hero-grid,
+  .ai-homepage .stack-grid,
+  .ai-homepage .feature-grid,
+  .ai-homepage .timeline-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 720px) {
+  .ai-homepage {
+    margin-top: -1rem;
+    padding-bottom: 3.5rem;
+  }
+
+  .ai-homepage .home-shell {
+    padding: 0 1rem;
+  }
+
+  .ai-homepage .hero-copy,
+  .ai-homepage .hero-panel,
+  .ai-homepage .feature-card,
+  .ai-homepage .publication-card,
+  .ai-homepage .mini-card,
+  .ai-homepage .timeline-card,
+  .ai-homepage .info-chip {
+    border-radius: 20px;
+  }
+
+  .ai-homepage .hero-copy {
+    padding: 1.4rem;
+  }
+
+  .ai-homepage .stat-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .ai-homepage .contact-panel {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}

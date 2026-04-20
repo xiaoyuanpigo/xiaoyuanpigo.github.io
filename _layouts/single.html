@@ -59,19 +59,17 @@ layout: default
       <section class="page__content" itemprop="text">
         {{ content }}
 
-        {% if page.citation and page.paperurl and page.slidesurl %}
-        <p style="font-size: 12px; line-height: 1.2; margin: 4px 0;">Recommended citation: {{ page.citation }}<br /><a
-            href="{{ page.paperurl }}">Paper</a> | <a href="{{ page.slidesurl }}">Slides</a></p>
-        {% elsif page.citation and page.paperurl %}
-        <p style="font-size: 12px; line-height: 1.2; margin: 4px 0;">Recommended citation: {{ page.citation }}<br /><a
-            href="{{ page.paperurl }}">Paper</a></p>
-        {% elsif page.citation and page.slidesurl %}
-        <p style="font-size: 12px; line-height: 1.2; margin: 4px 0;">Recommended citation: {{ page.citation }}<br /><a
-            href="{{ page.slidesurl }}">Slides</a></p>
-        {% elsif page.citation %}
+        {% if page.citation %}
         <p style="font-size: 12px; line-height: 1.2; margin: 4px 0;">Recommended citation: {{ page.citation }}</p>
-        {% elsif page.slidesurl %}
-        <p style="font-size: 12px; line-height: 1.2; margin: 4px 0;"><a href="{{ page.slidesurl }}">Slides</a></p>
+        {% endif %}
+
+        {% if page.paperurl or page.arxivurl or page.slidesurl or page.githuburl %}
+        <p style="font-size: 12px; line-height: 1.2; margin: 4px 0;">
+          {% if page.paperurl %}<a href="{{ page.paperurl }}">Paper</a>{% endif %}
+          {% if page.arxivurl %}{% if page.paperurl %} | {% endif %}<a href="{{ page.arxivurl }}">arXiv</a>{% endif %}
+          {% if page.slidesurl %}{% if page.paperurl or page.arxivurl %} | {% endif %}<a href="{{ page.slidesurl }}">Slides</a>{% endif %}
+          {% if page.githuburl %}{% if page.paperurl or page.arxivurl or page.slidesurl %} | {% endif %}<a href="{{ page.githuburl }}">Code</a>{% endif %}
+        </p>
         {% endif %}
 
         {% if page.link %}<div><a href="{{ page.link }}" class="btn">{{ site.data.ui-text[site.locale].ext_link_label |

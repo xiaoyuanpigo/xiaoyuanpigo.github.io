@@ -94,6 +94,39 @@
   <meta property="article:published_time" content="{{ page.date | date_to_xmlschema }}">
 {% endif %}
 
+{% if page.collection == 'publications' %}
+  <meta name="citation_title" content="{{ page.title | markdownify | strip_html | strip_newlines | escape_once }}">
+  {% if page.citation_authors %}
+    {% for author in page.citation_authors %}
+      <meta name="citation_author" content="{{ author | strip_html | strip_newlines | escape_once }}">
+    {% endfor %}
+  {% elsif page.authors %}
+    {% for author_line in page.authors %}
+      {% assign author_names = author_line | strip_html | split: "," %}
+      {% for author in author_names %}
+        <meta name="citation_author" content="{{ author | strip | strip_newlines | escape_once }}">
+      {% endfor %}
+    {% endfor %}
+  {% endif %}
+  {% if page.date %}
+    <meta name="citation_publication_date" content="{{ page.date | date: "%Y/%m/%d" }}">
+  {% endif %}
+  {% if page.venue %}
+    <meta name="citation_conference_title" content="{{ page.venue | strip_html | strip_newlines | escape_once }}">
+  {% endif %}
+  {% if page.paperurl %}
+    {% if page.paperurl contains "://" %}
+      {% assign citation_pdf_url = page.paperurl %}
+    {% else %}
+      {% assign citation_pdf_url = page.paperurl | prepend: site.url %}
+    {% endif %}
+    <meta name="citation_pdf_url" content="{{ citation_pdf_url | replace: '../', '/' | escape_once }}">
+  {% endif %}
+  {% if page.arxiv %}
+    <meta name="citation_arxiv_id" content="{{ page.arxiv | escape_once }}">
+  {% endif %}
+{% endif %}
+
 {% if paginator.previous_page %}
   <link rel="prev" href="{{ paginator.previous_page_path | prepend: seo_url }}">
 {% endif %}
@@ -120,6 +153,50 @@
       "name" : "{{ site.social.name | default: site.name }}",
       "url" : {{ seo_url | jsonify }},
       "sameAs" : {{ site.social.links | jsonify }}
+    }
+  </script>
+{% endif %}
+
+{% if page.collection == 'publications' %}
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ScholarlyArticle",
+      "headline": {{ page.title | markdownify | strip_html | strip_newlines | jsonify }},
+      "name": {{ page.title | markdownify | strip_html | strip_newlines | jsonify }},
+      "url": {{ page.url | prepend: seo_url | replace: "/index.html", "/" | jsonify }},
+      {% if seo_description %}
+      "description": {{ seo_description | jsonify }},
+      {% endif %}
+      {% if page.date %}
+      "datePublished": {{ page.date | date_to_xmlschema | jsonify }},
+      {% endif %}
+      {% if page.venue %}
+      "isPartOf": {
+        "@type": "PublicationIssue",
+        "name": {{ page.venue | strip_html | strip_newlines | jsonify }}
+      },
+      {% endif %}
+      "author": [
+        {% if page.citation_authors %}
+          {% for author in page.citation_authors %}
+          {
+            "@type": "Person",
+            "name": {{ author | strip | strip_html | strip_newlines | jsonify }}
+          }{% unless forloop.last %},{% endunless %}
+          {% endfor %}
+        {% elsif page.authors %}
+          {% for author_line in page.authors %}
+            {% assign author_names = author_line | strip_html | split: "," %}
+            {% for author in author_names %}
+            {
+              "@type": "Person",
+              "name": {{ author | strip | strip_html | strip_newlines | jsonify }}
+            }{% unless forloop.last %},{% endunless %}
+            {% endfor %}
+          {% endfor %}
+        {% endif %}
+      ]
     }
   </script>
 {% endif %}

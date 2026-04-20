@@ -11,7 +11,7 @@ locale                   : "en-US"
 title                    : "Yuan Xiao"
 title_separator          : "-"
 name                     : &name "Xiao, Yuan"
-description              : &description "Phd candidate in Nanjing University"
+description              : &description "Yuan Xiao is a Ph.D. student at Nanjing University working on trustworthy AI, neural network verification, code dataset watermarking, and software security."
 url                      : https://xiaoyuanpigo.github.io # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : "xiaoyuanpigo/xiaoyuanpigo.github.io"
@@ -125,9 +125,12 @@ og_image                 :  # Open Graph/Twitter default site image
 # For specifying social profiles
 # - https://developers.google.com/structured-data/customize/social-profiles
 social:
-  type                   : # Person or Organization (defaults to Person)
-  name                   : # If the user or organization name differs from the site's name
+  type                   : Person
+  name                   : "Yuan Xiao"
   links: # An array of links to social media profiles
+    - "https://scholar.google.com/citations?user=_k-F1H8AAAJ"
+    - "http://orcid.org/0009-0009-3166-8007"
+    - "https://github.com/xiaoyuanpigo"
 
 
 # Analytics

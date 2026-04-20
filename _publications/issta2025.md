@@ -2,9 +2,21 @@
 title: "DeCoMa: Detecting and Purifying Code Dataset Watermarks through Dual Channel Code Abstraction"
 authors: 
     - <strong>Yuan Xiao</strong>, Yuchen Chen, Shiqing Ma, Haocheng Huang, Chunrong Fang<sup>*</sup>, Yanwei Chen, Weisong Sun, Yunfeng Zhu, Xiaofang Zhang, Zhenyu Chen<sup>*</sup>
+description: "DeCoMa detects and purifies code dataset watermarks through dual-channel code abstraction."
+excerpt: "Detecting and purifying code dataset watermarks through dual-channel code abstraction."
+citation_authors:
+    - Yuan Xiao
+    - Yuchen Chen
+    - Shiqing Ma
+    - Haocheng Huang
+    - Chunrong Fang
+    - Yanwei Chen
+    - Weisong Sun
+    - Yunfeng Zhu
+    - Xiaofang Zhang
+    - Zhenyu Chen
 collection: publications
 permalink: /publication/issta2025
-excerpt: ''
 date: 2025-06-01
 topic: 'Watermarking for Code Large Language Models and Datasets'
 venue: 'International Symposium on Software Testing and Analysis'

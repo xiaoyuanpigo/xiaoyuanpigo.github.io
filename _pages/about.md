@@ -136,7 +136,6 @@ redirect_from:
                 {% if post.slidesurl %}
                   <a class="link-pill" href="{{ post.slidesurl }}">Slides</a>
                 {% endif %}
-                <a class="link-pill" href="{{ base_path }}{{ post.url }}">Details</a>
               </div>
             </article>
           {% endfor %}

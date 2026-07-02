@@ -12,7 +12,7 @@ redirect_from:
 Education
 ======
 * Joint Ph.D. in Compute Science, School of Computing, National University of Singapore, Nov. 2024-Nov. 2025 (Supervised by Professor [Jinsong Dong](https://www.comp.nus.edu.sg/~dongjs/), with academic collaboration and guidance from Professor [Jun Sun](https://sunjun.site//), Singapore Management University)
-* Ph.D. in Software Institute, Nanjing University, 2021-(expected: 2026) (Supervised by Professor [Zhenyu Chen](https://software.nju.edu.cn/zychen/) and Associate Professor [Chunrong Fang](https://chunrong.github.io), with academic collaboration and guidance from Assistant Professor [Shiqing Ma](https://people.cs.umass.edu/~shiqingma/), University of Massachusetts Amherst)
+* Ph.D. in Software Institute, Nanjing University, 2021-(expected: Sep. 2026) (Supervised by Professor [Zhenyu Chen](https://software.nju.edu.cn/zychen/) and Associate Professor [Chunrong Fang](https://chunrong.github.io), with academic collaboration and guidance from Assistant Professor [Shiqing Ma](https://people.cs.umass.edu/~shiqingma/), University of Massachusetts Amherst)
 * B.S. in Mathematics Institute, Sun Yat-sen University, 2017-2021 (Supervised by Professor [Xianping Guo](https://math.sysu.edu.cn/teacher/428))
 
 <!-- Work experience
@@ -69,6 +69,7 @@ Projects
 
 Awards
 ======
+* Outstanding Doctoral Graduate, Nanjing University, 2026
 * Huawei Scholarship, School Level, 2025
 * Model Graduate Student, School Level, 2025 
 * Nanjing University Graduate Scholarship, School Level, (2021-2025) 
@@ -80,9 +81,13 @@ Awards
   
 Teaching
 ======
-* Teaching Assitant: Foudation of Data Science (2022-2024) 
+* Teaching Assistant: Foundation of Data Science (2021-2024) 
   
 Service and leadership
 ======
-* Reviewer: AAAI 2023, NeurIPS (2024, 2025), ICLR (2025, 2026), ICML 2025, TSE 2026     
+* Reviewer: AAAI 2023, NeurIPS (2024, 2025, 2026), ICLR (2025, 2026), ICML 2025, TSE 2026     
 * Sub-Reviewer/External-Reviewer: TASE 2025, AAAI 2025, USENIX 2026, CVPR 2026
+
+Patents
+======
+* Zhenyu Chen, Yuan Xiao, Ran Chen. Robustness verification method for load prediction models based on linear approximation. Chinese Patent ZL2024102921461.

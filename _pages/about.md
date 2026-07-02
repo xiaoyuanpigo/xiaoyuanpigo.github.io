@@ -51,7 +51,7 @@ redirect_from:
             <span>talks and posters</span>
           </div>
           <div class="info-chip">
-            <strong>2026</strong>
+            <strong>Sep 2026</strong>
             <span>expected Ph.D. completion</span>
           </div>
         </div>
@@ -87,7 +87,7 @@ redirect_from:
     </div>
     <div class="timeline-grid" style="margin-top: 1rem;">
       <article class="timeline-card">
-        <span class="timeline-date">2021 - 2026</span>
+        <span class="timeline-date">2021 - Sep 2026</span>
         <h3>Ph.D., Nanjing University</h3>
         <p>Software Institute. Research on trustworthy AI, verification, and security.</p>
       </article>
@@ -233,8 +233,16 @@ redirect_from:
             <div class="mini-meta">Huawei Scholarship (2025), Model Graduate Student (2025), Nanjing University Graduate Scholarship (2021-2025), Outstanding Graduate Student (2022).</div>
           </div>
           <div class="mini-item">
+            <div class="mini-item-title">2026 Award</div>
+            <div class="mini-meta">Outstanding Doctoral Graduate, Nanjing University, 2026.</div>
+          </div>
+          <div class="mini-item">
             <div class="mini-item-title">Projects</div>
             <div class="mini-meta">Safety-critical software quality assurance, Internet of Vehicles load analysis, and population measurement projects.</div>
+          </div>
+          <div class="mini-item">
+            <div class="mini-item-title">Patent</div>
+            <div class="mini-meta">Zhenyu Chen, Yuan Xiao, Ran Chen. Robustness verification method for load prediction models based on linear approximation. Chinese Patent ZL2024102921461.</div>
           </div>
         </div>
       </div>

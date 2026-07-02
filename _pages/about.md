@@ -30,7 +30,7 @@ redirect_from:
         </div>
         <div class="hero-actions">
           <a class="hero-button primary" href="#publications">View Publications</a>
-          <a class="hero-button secondary" href="{{ base_path }}/files/resume.pdf">Open CV</a>
+          <a class="hero-button secondary" href="{{ base_path }}/files/resume-2026-07.pdf">Open CV</a>
           <a class="hero-button secondary" href="mailto:{{ site.author.email }}">Email Me</a>
         </div>
       </div>
